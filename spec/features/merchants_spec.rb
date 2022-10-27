@@ -11,12 +11,14 @@ RSpec.describe 'User Story - Merchants', :vcr do
     expect(page).to have_content("Cummings-Thiel")
 
     click_link "Schroeder-Jerde"  
-    expect(current_path).to eq(merchant_path(1))
+    expect(current_path).to eq(merchant_items_path(1))
   end
 
   it 'each merchants show page should display a list of the merchants items' do
-    visit 'merchant_path(1)'
+    visit merchant_items_path(1)
 
-    expect(page).to have_content()
+    expect(page).to have_content("Schroeder-Jerde")
+    expect(page).to have_content("Item Nemo Facere")
+    expect(page).to have_content("Item Expedita Aliquam")
   end
 end

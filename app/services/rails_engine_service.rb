@@ -17,7 +17,6 @@ class RailsEngineService
 
   def self.merchant_items_request(merchant_id)
     response = conn.get("/api/v1/merchants/#{merchant_id}/items")
-    x = parse(response)
-    require 'pry'; binding.pry
+    parse(response)
   end
 end
